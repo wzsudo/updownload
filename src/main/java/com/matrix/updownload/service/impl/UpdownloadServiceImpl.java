@@ -52,7 +52,7 @@ public class UpdownloadServiceImpl implements UpdownloadService {
     @Override
     public ResponseEntity<Resource> loadFile(String url) {
         try {
-            Path path = rootLocation.resolve(url);
+            Path path = rootLocation.resolve(url) ;
             Resource resource = new UrlResource(path.toUri());
             //将文件名解码是为了确保文件名正确
             String fileName = url.substring(url.lastIndexOf("/") + 1);
